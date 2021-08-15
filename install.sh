@@ -23,7 +23,7 @@ sed -i 's/#PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
 echo "- Install Dropbear, Stunnel and ssh service"
-apt-get -y install dropbear ssh stunnel4 > /dev/null 2>&1
+apt-get -y install dropbear stunnel4 > /dev/null 2>&1
 cd /etc/stunnel/ && wget -N https://raw.githubusercontent.com/vn-ncvinh/tunnel-ssl-drpobear/main/file/stunnel.conf > /dev/null 2>&1
 sed -i 's/http/\#http/g' /etc/services > /dev/null 2>&1
 sed -i 's/https/\#https/g' /etc/services > /dev/null 2>&1
